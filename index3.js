@@ -35,13 +35,21 @@ function prepareCoffee(){
 }
 
 async function startProcess(){
-    let foodvalue = await prepareFood();
+    try
+{    let foodvalue = await prepareFood(2);
     console.log("Food-Value",foodvalue);
     let frenchtoastvalue = await prepareFrenchToast();
     console.log("French Toast Value",frenchtoastvalue);
     let coffeevalue = await prepareCoffee();
     console.log("Coffee Value",coffeevalue);
 }
+    catch(error){
+        console.log("Error ",error);
+    }
+    
+}
+
+
 startProcess();
 
 /*
